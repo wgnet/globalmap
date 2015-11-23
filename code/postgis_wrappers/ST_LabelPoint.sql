@@ -5,7 +5,7 @@ $$
 DECLARE
     center geometry;
 BEGIN
-    center = ST_Centroid(ST_Expand(geom, 0));
+    center = ST_Centroid(geom);
     IF ST_Intersects(center, geom) THEN
         return center;
     END IF;
