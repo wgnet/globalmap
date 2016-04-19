@@ -1,4 +1,4 @@
-CREATE LANGUAGE plpython2u;
+CREATE OR REPLACE LANGUAGE plpython2u;
 CREATE OR REPLACE FUNCTION unidecode (string text)
   RETURNS text
 AS $$
