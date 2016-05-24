@@ -23,13 +23,9 @@ BEGIN
                 RETURN
                 ST_Translate(
                     ST_Safe_Repair(
-                        ST_Difference(
-                            ST_Safe_Repair(
-                                ST_Intersection(
-                                    ST_Safe_Repair(ST_Translate(geom_a, -ST_XMin(geom_a), -ST_YMin(geom_a))),
-                                    ST_Safe_Repair(ST_Translate(geom_b, -ST_XMin(geom_a), -ST_YMin(geom_a)))
-                                )
-                            )
+                        ST_Intersection(
+                              ST_Safe_Repair(ST_Translate(geom_a, -ST_XMin(geom_a), -ST_YMin(geom_a))),
+                              ST_Safe_Repair(ST_Translate(geom_b, -ST_XMin(geom_a), -ST_YMin(geom_a)))
                         )
                     ),
                     ST_XMin(geom_a),
